@@ -1,5 +1,5 @@
 # Django Music Streaming App
-An online streaming app using Django based on these project here: http://listenapp.manjurulhoque.com/
+An online streaming app using Django based on this project here: http://listenapp.manjurulhoque.com/
 
 Features:
 
