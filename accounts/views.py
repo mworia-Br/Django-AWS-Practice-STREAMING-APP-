@@ -1,6 +1,8 @@
 import json
 
 from django.contrib.auth import authenticate, login, logout
+from django.conf import settings
+from django.core.mail import send_mail
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import redirect
 
@@ -18,6 +20,11 @@ def register_user(request):
             user = form.save(commit=False)
             user.set_password(password1)
             form.save()
+            subject = 'welcome to MUSICSTREAMING'
+            message = 'Hi, thank you for registering in MUSICSTREAMING.'
+            email_from = settings.EMAIL_HOST_USER
+            recipient_list = [user.email, ]
+            send_mail( subject, message, email_from, recipient_list )
             return JsonResponse({"status": True, "message": "Registration confirm"})
         else:
             errors = []
