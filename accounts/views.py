@@ -21,7 +21,7 @@ def register_user(request):
             user.set_password(password1)
             form.save()
             subject = 'welcome to MUSICSTREAMING'
-            message = 'Hi, thank you for registering in MUSICSTREAMING.'
+            message = f'Hi {user.username}, thank you for registering in MUSICSTREAMING.'
             email_from = 'orderprocessing@humpbackfieldsolutions.xyz'
             recipient_list = [user.email, ]
             send_mail( subject, message, email_from, recipient_list )
