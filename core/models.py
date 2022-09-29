@@ -52,6 +52,7 @@ class Song(models.Model):
     # audio_location = models.CharField(max_length=255)
     genre = models.ForeignKey(Genre, on_delete=models.DO_NOTHING)
     artists = models.ManyToManyField(Artist, related_name='songs')
+    awsurl = models.CharField(max_length=6000, default="add", verbose_name="Player url")
     size = models.IntegerField(default=0)
     playtime = models.CharField(max_length=10, default="0.00")
     type = models.CharField(max_length=10)

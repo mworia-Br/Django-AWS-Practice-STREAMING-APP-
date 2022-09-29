@@ -32,7 +32,7 @@
                                 <a href="javascript:void(0);"
                                    class="btn btn-pill btn-air btn-bold btn-danger"
                                    id="play-pause"
-                                   data-audio='{"name": "{{ song.title }}", "artist": "{{ song.artists.0.name }}", "album": "", "url": "{{ song.song.url }}", "cover_art_url": "{{ song.thumbnail.url }}"}'>
+                                   data-audio='{"name": "{{ song.title }}", "artist": "{{ song.artists.0.name }}", "album": "", "url": "{{ song.song.awsurl }}", "cover_art_url": "{{ song.thumbnail.url }}"}'>
                                     Play
                                 </a>
                             </div>
@@ -131,9 +131,9 @@
         Amplitude.init({
             "songs": [{
                 name: "{{ song.title }}",
-                artist: "Arebica Luna",
+                artist: "{{ song.artists }}",
                 album: "Mummy",
-                url: "{{ song.song.url }}",
+                url: "{{ song.awsurl }}",
                 cover_art_url: "{{ song.thumbnail.url }}"
             }],
             "bindings": {
